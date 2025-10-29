@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubhashree R - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #667eea;
+            object-fit: cover;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+            font-weight: bold;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 500;
+        }
+
+        .contact-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            color: #555;
+            font-size: 1.2em;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 8px 0;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        ul li::before {
+            content: "▹ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card h4 {
+            color: white;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        table thead {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tbody tr:hover {
+            background: #f5f7fa;
+        }
+
+        table th {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .hobby-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .objective {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #764ba2;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skills-container, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="shree.jpg"alt="Shubhashree R" class="profile-img"
+            <h1>Shubhashree R</h1>
+            <p class="subtitle">Information Science Engineering Student</p>
+            <p style="color: #666;">📍 Kundwada, Davanagere | 📞 9740913251</p>
+            <div class="contact-links">
+                <a href="mailto:shubharenukaprasanna@gmail.com">📧 Email</a>
+                <a href="https://www.linkedin.com/in/shubhashree-r" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/shubha4455" target="_blank">💻 GitHub</a>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="objective">
+                <p>I am an <span style="font-weight: 600; color: #667eea;">Information Science Engineering student</span> with a strong passion for web and app development, database systems, and problem-solving. I am enthusiastic about applying my technical skills to build innovative and practical solutions that make a difference.</p>
+                <p>Currently pursuing my Bachelor of Engineering at Davanagere, I am dedicated to continuous learning and staying updated with the latest technologies. My goal is to leverage my technical expertise and creative thinking to contribute to meaningful projects.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <h4>Programming Languages</h4>
+                    <ul>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>C</li>
+                    </ul>
+                    <h4>Web Development</h4>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                        <li>JSP/Servlets</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <h4>Database</h4>
+                    <ul>
+                        <li>MySQL</li>
+                    </ul>
+                    <h4>Development Tools</h4>
+                    <ul>
+                        <li>VS Code</li>
+                        <li>Eclipse</li>
+                        <li>Android Studio</li>
+                        <li>XAMPP</li>
+                    </ul>
+                    <h4>Core Concepts</h4>
+                    <ul>
+                        <li>Object-Oriented Programming (OOP)</li>
+                        <li>Data Structures & Algorithms (DSA)</li>
+                        <li>Database Management Systems (DBMS)</li>
+                        <li>Computer Networks (CN)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Leadership</li>
+                        <li>Problem-Solving & Analytical Thinking</li>
+                        <li>Team Collaboration</li>
+                        <li>Adaptability & Quick Learner</li>
+                        <li>Effective Communication</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h4>🎓 VTU Notes System</h4>
+                    <p>A comprehensive platform for managing and accessing VTU course notes, designed to help students efficiently organize and share academic resources.</p>
+                </div>
+                <div class="project-card">
+                    <h4>📚 Library Management System</h4>
+                    <p>A database-driven application for managing library operations including book inventory, member management, and transaction tracking.</p>
+                </div>
+                <div class="project-card">
+                    <h4>🏥 AI Healthcare Chatbot</h4>
+                    <p>An intelligent chatbot powered by AI/ML technologies to provide healthcare information and assistance to users through natural language interaction.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Degree/Level</th>
+                        <th>Institution</th>
+                        <th>Location</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Bachelor of Engineering</strong><br>Information Science</td>
+                        <td>Engineering College</td>
+                        <td>Davanagere, India</td>
+                        <td>Oct 2023 - Oct 2027</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pre-University</strong></td>
+                        <td>Vidwath Academy</td>
+                        <td>Davanagere, India</td>
+                        <td>Aug 2021 - Mar 2023</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="certificates">
+            <h2>Certificates</h2>
+            <div style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 20px; border-radius: 10px; border-left: 5px solid #667eea;">
+                <h4>🏆 Python AI ML</h4>
+                <p>Completed certification in Python, Artificial Intelligence, and Machine Learning, demonstrating proficiency in modern AI technologies and applications.</p>
+            </div>
+        </section>
+
+        <section id="hobbies">
+            <h2>Hobbies & Interests</h2>
+            <div class="hobbies">
+                <span class="hobby-tag">♟️ Playing Chess</span>
+                <span class="hobby-tag">🎬 Watching Thriller Movies</span>
+                <span class="hobby-tag">💃 Dancing</span>
+                <span class="hobby-tag">🎤 Singing</span>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Shubhashree R. All rights reserved.</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">Made with ❤️ using HTML & CSS</p>
+        </footer>
+    </div>
+</body>
+</html>
